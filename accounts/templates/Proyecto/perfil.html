@@ -1,0 +1,17 @@
+{% extends 'Proyecto/padre.html' %}
+
+{% load static %}
+
+{% block content %}
+<h1>Este es el perfil de {{user.username}} </h1>
+<img src="profile.image.url" alt="foto de perfil">
+
+<p> Nombre:  {{user_profile.nombre}} </p>
+<p> Descripcion: {{user_profile.descripcion}}</p>
+<p>Sitio web: <a href="{{ user_profile.link }}" target="_blank">{{ user_profile.link }}</a></p>
+<p>Correo: {{user_profile.correo}} </p>
+<p> Contraseña: {{user_profile.contraseña}} </p>
+
+
+
+{% endblock %}

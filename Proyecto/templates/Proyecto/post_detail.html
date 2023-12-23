@@ -1,0 +1,25 @@
+{% extends 'Proyecto/padre.html' %}
+
+{% load static %}
+
+{% block content %}
+    <article>        
+                <h1> {{posts.titulo}} </h1>
+                <h2> {{posts.subtitulo}} </h2>
+                <p> {{posts.cuerpo}} </p>
+                <p style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"> Fecha de publicacion: {{posts.fecha}} </p>
+                <p> Lugar: {{ posts.lugar }}</p>
+                {% if posts.imagen %}
+                    <img src="{{posts.imagen.url}}" alt="imagen">
+                {% endif %}
+            
+            {% if not posts %}
+                <p> No hay blogs aún.</p>
+            {% endif %}
+        
+    </article>
+
+
+
+
+{% endblock %}

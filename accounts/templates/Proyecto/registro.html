@@ -1,0 +1,20 @@
+{% extends 'Proyecto/padre.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h1>Registrar Usuario</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="email"> Correo:</label>
+        <input type="email" name="email" required>
+        <br>
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary"> Guardar </button>
+    </form>
+    <br>
+    <a href="{% url 'accounts:login' %}" class="btn btn-dark"> INICIAR SESION </a>
+    
+</div>
+{% endblock %}

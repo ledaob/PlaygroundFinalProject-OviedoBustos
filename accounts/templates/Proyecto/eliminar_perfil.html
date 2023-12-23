@@ -1,0 +1,17 @@
+{% extends 'Proyecto/padre.html' %}
+
+{% block content %}
+
+<h1>Confirmar borrado de perfil</h1>
+<br>
+<p>¿Estás seguro de que deseas borrar tu perfil?</p>
+
+<form method="post" action="{% url 'accounts:borrarPerfil' %}">
+
+    {% csrf_token %}
+
+    <button type="submit">Sí, borrar mi perfil</button>
+    
+    <a href="{% url 'accounts:perfil' %}">Cancelar</a>
+</form>
+{% endblock %}
